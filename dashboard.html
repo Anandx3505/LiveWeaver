@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LiveWeaver Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #1e1e1e;
+      --fg: #d4d4d4;
+      --accent: #0db9d7;
+      --card-bg: #2d2d2d;
+      --card-hover: #3a3a3a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Fira Code', monospace;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--fg);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #252526;
+      border-bottom: 1px solid #333;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    #welcomeText {
+      font-size: 1rem;
+      color: #bbb;
+    }
+
+
+    header h1 {
+      font-size: 1.5rem;
+      color: var(--accent);
+    }
+
+    header button {
+      background-color: transparent;
+      color: var(--fg);
+      border: 1px solid var(--fg);
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: 0.2s ease;
+    }
+
+    header button:hover {
+      background-color: var(--card-hover);
+    }
+
+    main {
+      padding: 2rem;
+      flex-grow: 1;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 1.5rem;
+    }
+
+    .controls button {
+      background-color: var(--accent);
+      color: #000;
+      padding: 0.5rem 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .controls button:hover {
+      background-color: #0aa7c2;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .project-card {
+      background-color: var(--card-bg);
+      padding: 1rem;
+      border-radius: 8px;
+      transition: background 0.2s;
+      border: 1px solid #333;
+    }
+
+    .project-card:hover {
+      background-color: var(--card-hover);
+    }
+
+    .project-title {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-actions {
+      margin-top: 1rem;
+    }
+
+    .project-actions button {
+      background-color: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .project-actions button:hover {
+      background-color: var(--accent);
+      color: #000;
+    }
+
+    .empty-state {
+      text-align: center;
+      margin-top: 4rem;
+      font-size: 1.1rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>LiveWeaver</h1>
+    <div class="header-right">
+      <div id="welcomeText">Welcome!</div>
+      <button id="logoutBtn">Logout</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="controls">
+      <button id="newProjectBtn">+ New Project</button>
+    </div>
+
+    <div class="projects-grid" id="projectsContainer">
+      <!-- Example card (will be dynamically generated later) -->
+      <!--
+      <div class="project-card">
+        <div class="project-title">Welcome Project</div>
+        <div class="project-actions">
+          <button>Open</button>
+        </div>
+      </div>
+      -->
+    </div>
+
+    <div class="empty-state" id="emptyState" style="display: none;">
+      No projects found. Click “New Project” to get started!
+    </div>
+  </main>
+  <!-- Project Creation Modal -->
+<div id="projectModal" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:1000;">
+  <div style="background:#2d2d2d; padding:2rem; border-radius:8px; max-width:400px; width:90%;">
+    <h2 style="margin-bottom:1rem; color:#0db9d7;">Create New Project</h2>
+    <input id="projectNameInput" type="text" placeholder="Enter project name" style="width:100%; padding:0.6rem; border-radius:4px; border:none; margin-bottom:1rem;" />
+    <div style="display:flex; justify-content:flex-end; gap:0.5rem;">
+      <button onclick="closeModal()" style="background:#555; color:white; border:none; padding:0.5rem 1rem; border-radius:4px;">Cancel</button>
+      <button onclick="createNewProject()" style="background:#0db9d7; color:black; font-weight:bold; border:none; padding:0.5rem 1rem; border-radius:4px;">Create</button>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="dash.js"></script>
+
+</body>
+</html>

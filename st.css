@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  height: 100%;
+  z-index: 1;
+}
+
+.left, .right {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left {
+  color: #0db9d7;
+  font-size: 4rem;
+  font-weight: bold;
+  font-family: 'Fira Code', monospace;
+  text-align: left;
+}
+
+.divider {
+  width: 2px;
+  background-color: #ccc;
+  height: 80%;
+  align-self: center;
+}
+
+.login-container,.signup-container {
+  padding: 30px;
+  width: 300px;
+}
+.signup-container {
+  display: none;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+p {
+  color: white;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #555;
+}
+a {
+  color: white;
+}
+
+input[type="email"], input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Typing animation */
+.typing-text {
+  letter-spacing: 0.2rem; /* Reduced spacing between letters */
+}
+
+/* Animated letters */
+.char {
+  opacity: 0;
+  animation: appear 0.6s forwards;
+}
+
+/* Delay each character */
+.char:nth-child(1) { animation-delay: 0s; }
+.char:nth-child(2) { animation-delay: 0.1s; }
+.char:nth-child(3) { animation-delay: 0.2s; }
+.char:nth-child(4) { animation-delay: 0.3s; }
+.char:nth-child(5) { animation-delay: 0.5s; } /* Newline */
+.char:nth-child(6) { animation-delay: 0.6s; }
+.char:nth-child(7) { animation-delay: 0.7s; }
+.char:nth-child(8) { animation-delay: 0.8s; }
+.char:nth-child(9) { animation-delay: 0.9s; }
+.char:nth-child(10) { animation-delay: 1s; }
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

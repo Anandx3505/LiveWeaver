@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.editor-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.tab-bar {
+  background-color: #2d2d30;
+  border-bottom: 1px solid #3e3e42;
+  display: flex;
+  align-items: center;
+  height:41.02px;
+  padding: 0 10px;
+}
+
+.tab {
+  padding: 8px 16px;
+  background-color: #2d2d30;
+  border-right: 1px solid #3e3e42;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 13px;
+}
+
+.tab:hover {
+  background-color: #37373d;
+}
+
+.tab.active {
+  background-color: #1e1e1e;
+  border-bottom: 2px solid #007acc;
+  height: 41.02px;
+}
+
+.code-editor {
+  flex: 1;
+  background-color: #1e1e1e;
+  border: none;
+  outline: none;
+  padding: 16px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #d4d4d4;
+  resize: none;
+}
+
+.code-editor::selection {
+  background-color: #264f78;
+}
+
+/* Buttons aligned right */
+.button-group {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Stylish Save & Preview Buttons */
+.button-group button {
+  font-size: 0.9rem;
+  padding: 0.6em 1.4em;
+  background-color: #000;
+  border: 2px solid #19d5fa;
+  border-radius: 0.8em;
+  color: #fff;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: -3px 3px 0px 0px #19d5fa;
+  cursor: pointer;
+}
+
+.button-group button:hover {
+  transform: translate(3px, -3px);
+}
+
+.app-header{
+    height: 41.02px;
+}
+h2 {
+    font-family: 'Fira Code', monospace;
+    font-size: 1.5rem;
+    color: #0db9d7;
+    display: block;
+    font-size: 2em;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}

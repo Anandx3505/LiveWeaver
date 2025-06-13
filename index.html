@@ -1,27 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Live Code Editor</title>
-    <script src="https://kit.fontawesome.com/5cdf1d6745.js" crossorigin="anonymous"></script>
-    <script src="index.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LiveWeaver Login</title>
+  <link rel="stylesheet" href="st.css">
 </head>
 <body>
-    <div class="container">
-        <div class="left">
-            <label><i class="fa fa-html5"></i> HTML</label>
-            <textarea id="html-code" onkeyup="run()"></textarea>
-            <label><i class="fa fa-css3"></i> CSS</label>
-            <textarea id="css-code" onkeyup="run()"></textarea>
-            <label><i class="fa-brands fa-js"></i> JavaScript</label>
-            <textarea id="js-code" onkeyup="run()"></textarea>
-        </div>
-        <div class="right">
-            <label id="output-label"><i class="fa fa-play"></i> OUTPUT</label>
-            <iframe id="output-iframe" sandbox="allow-same-origin allow-scripts"></iframe>
-        </div>
+  <div class="overlay"></div>
+
+  <div class="container">
+    
+    <div class="left">
+      <div class="typing-text">
+        <span class="char">L</span>
+        <span class="char">i</span>
+        <span class="char">v</span>
+        <span class="char">e</span><br>
+        <span class="char">W</span>
+        <span class="char">e</span>
+        <span class="char">a</span>
+        <span class="char">v</span>
+        <span class="char">e</span>
+        <span class="char">r</span>
+      </div>
     </div>
+
+    <div class="divider"></div>
+
+    <div class="right">
+      <div class="login-container" id="signin_container">
+        <form>
+          <div class="form-group">
+            <input type="email" id="signin_email" placeholder="Enter your email" />
+          </div>
+          <div class="form-group">
+            <input type="password" id="signin_password" placeholder="Enter your password" />
+          </div>
+          <button type="submit" id="signin_btn">Log In</button>
+          <p style="margin-top: 10px; text-align: center;">
+            Don't have an account? <a href="#" onclick="toggleForm()">Sign up</a>
+          </p>
+        </form>
+      </div>
+
+      <div class="signup-container" id="signup_container">
+        <form>
+          <div class="form-group">
+            <input type="email" id="signup_email" placeholder="Enter your email" />
+          </div>
+          <div class="form-group">
+            <input type="password" id="signup_password" placeholder="Enter your password" />
+          </div>
+          <button type="submit" id="signup_btn">Sign Up</button>
+          <p style="margin-top: 10px; text-align: center;">
+            Already have an account? <a href="#" onclick="toggleForm()">Login</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="ap.js" type="module" defer></script>
 </body>
 </html>

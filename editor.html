@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LiveWeaver Editor</title>
+  <link rel="stylesheet" href="edi.css" />
+</head>
+<body>
+  <div class="editor-container">
+    <div class="tab-bar">
+      <div class="app-header">
+            <h2 id="editorLogo" style="cursor: pointer;">LiveWeaver</h2>
+      </div>
+      <div class="tab active" data-file="index.html">index.html</div>
+      <div class="tab" data-file="style.css">style.css</div>
+      <div class="tab" data-file="script.js">script.js</div>
+      <div class="button-group">
+        <button id="saveBtn" title="Save (Ctrl/Cmd + S)">💾 Save</button>
+        <button id="previewBtn" title="Live Preview">🚀 Preview</button>
+      </div>
+    </div>
+    
+    <textarea class="code-editor" id="codeEditor" placeholder="Start coding..."></textarea>
+  </div>
+
+  <script type="module" src="edi.js"></script>
+</body>
+</html>
